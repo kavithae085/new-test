@@ -26,10 +26,10 @@ stages:
       displayName: 'Archive files'
       inputs:
         
-        rootFolderOrFile: '$(frammer/build)'
+        rootFolderOrFile: '$(/myagent/_work/1/s)'
         includeRootFolder: false
-        archiveType: zip
-        archiveFile: '$(frammer)/$(Build).zip'
+        archiveType: '7z'
+        archiveFile: '$(/myagent/_work/1/s)/build.zip'
         replaceExistingArchive: true
         verbose: true
  
