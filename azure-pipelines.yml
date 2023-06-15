@@ -26,10 +26,10 @@ stages:
       displayName: 'Archive files'
       inputs:
         
-        rootFolderOrFile: '$(/myagent/_work/1/s)'
+        rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: '$(/myagent/_work/1/s)/build.zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
         replaceExistingArchive: true
         verbose: true
  
