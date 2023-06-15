@@ -28,7 +28,7 @@ stages:
         
         rootFolderOrFile: '$(/myagent/_work/1/s)'
         includeRootFolder: false
-        archiveType: '7z'
+        archiveType: zip
         archiveFile: '$(/myagent/_work/1/s)/build.zip'
         replaceExistingArchive: true
         verbose: true
