@@ -33,11 +33,9 @@ stages:
         replaceExistingArchive: true
         verbose: true
  
-    - upload: build.zip
-      displayName: 'Upload package'
-      artifact: drop
+    - task: PublishPipelineArtifact@0
+      displayName: 'Publish pipeline artifacts'
+      inputs: 
+        targetpath: $(Build.ArtifactStagingDirectory)/archiveFilePatterns:'**/*.zip'
       
-      task: PublishPipelineArtifact@1
-      inputs:
-        targetPath: '$(Pipeline.Workspace)'
-        publishLocation:'pipeline'
+      
