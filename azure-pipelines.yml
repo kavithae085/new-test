@@ -36,6 +36,5 @@ stages:
     - task: PublishPipelineArtifact@0
       displayName: 'Publish pipeline artifacts'
       inputs: 
-        targetpath: $(Build.ArtifactStagingDirectory)/archiveFilePatterns:'**/*.zip'
-      
+        targetpath: $(Build.ArtifactStagingDirectory)/root/myagent/_work/1/a/archiveFilePatterns:'**/*.zip'
       
