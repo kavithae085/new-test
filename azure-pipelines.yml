@@ -33,6 +33,10 @@ stages:
         replaceExistingArchive: true
         verbose: true
  
+    - upload: build.zip
+      displayName: 'Upload package'
+      artifact: drop
+      
       task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Pipeline.Workspace)'
