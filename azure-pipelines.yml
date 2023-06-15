@@ -28,9 +28,9 @@ stages:
         rootFolderOrFile: 'build'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        archiveFile: build.zip
         replaceExistingArchive: true
  
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    - upload: build.zip
       displayName: 'Upload package'
       artifact: drop
