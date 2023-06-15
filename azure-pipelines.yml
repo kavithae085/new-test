@@ -25,10 +25,10 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: 'build'
+        rootFolderOrFile: 'frammer/build'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: build.zip
+        archiveFile: 'frammer/build.zip'
         replaceExistingArchive: true
  
     - upload: build.zip
