@@ -26,11 +26,12 @@ stages:
       displayName: 'Archive files'
       inputs:
         
-        rootFolderOrFile: 'frammer/build'
+        rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: 'frammer/build.zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
         replaceExistingArchive: true
+        verbose: true
  
     - upload: build.zip
       displayName: 'Upload package'
