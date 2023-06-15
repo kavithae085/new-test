@@ -38,3 +38,7 @@ stages:
       inputs: 
         targetpath: $(Build.ArtifactStagingDirectory)/archiveFilePatterns:'**/*.zip'
       
+    - task: CopyFiles@2
+      inputs:
+       contents: '/myagent/_work/1/s/index.php/publish/**'
+       targetFolder: $(Build.ArtifactStagingDirectory)
