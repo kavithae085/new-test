@@ -33,9 +33,13 @@ stages:
         replaceExistingArchive: true
         verbose: true
  
-    - task: PublishPipelineArtifact@1
-      displayName: 'Publish pipeline artifacts'
-      inputs: 
-        targetpath: $(Build.ArtifactStagingDirectory)/myagent/_work/1/s/archiveFilePatterns:'**/*.zip'
+    - task: CopyFiles@2
+      inputs:
+        contents: '_buildOutput/**'
+        targetFolder: $(Build.ArtifactStagingDirectory)
       
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: $(Build.ArtifactStagingDirectory)
+        artifactName: MyBuildOutputs
     
