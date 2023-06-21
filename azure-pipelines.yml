@@ -26,20 +26,16 @@ stages:
       displayName: 'Archive files'
       inputs:
         
-        rootFolderOrFile: '$(Build.SourcesDirectory)'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
         includeRootFolder: false
-        archiveType: zip
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        archiveType: tar
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(uiName).tar.gz'
         replaceExistingArchive: true
         verbose: true
- 
-    - task: CopyFiles@2
-      inputs:
-        contents: '_buildOutput/**'
-        targetFolder: $(Build.ArtifactStagingDirectory)
-      
+
     - task: PublishBuildArtifacts@1
       inputs:
-        pathToPublish: $(Build.ArtifactStagingDirectory)
-        artifactName: MyBuildOutputs
+        pathToPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'container'
     
