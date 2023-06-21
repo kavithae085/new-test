@@ -28,8 +28,8 @@ stages:
         
         rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
-        archiveType: zip
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        archiveType: tar
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar.gz'
         replaceExistingArchive: true
         verbose: true
  
